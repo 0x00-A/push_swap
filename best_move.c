@@ -20,7 +20,7 @@ int	ft_abs(int a)
 		return (a);
 }
 
-int	ft_rotate_a(t_stack *a, int stack_cost)
+void	ft_rotate_a(t_stack *a, int stack_cost)
 {
 	while (stack_cost)
 	{
@@ -35,10 +35,9 @@ int	ft_rotate_a(t_stack *a, int stack_cost)
 			stack_cost -= 1;
 		}
 	}
-	return (stack_cost);
 }
 
-int	ft_rotate_b(t_stack *b, int stack_cost)
+void	ft_rotate_b(t_stack *b, int stack_cost)
 {
 	while (stack_cost)
 	{
@@ -53,7 +52,6 @@ int	ft_rotate_b(t_stack *b, int stack_cost)
 			stack_cost -= 1;
 		}
 	}
-	return (stack_cost);
 }
 
 void	ft_exc_move(t_stacks *stacks, t_cost costs)
@@ -76,8 +74,8 @@ void	ft_exc_move(t_stacks *stacks, t_cost costs)
 			costs.cost_b += 1;
 		}
 	}	
-	costs.cost_a = ft_rotate_a(stacks->a, costs.cost_a);
-	costs.cost_b = ft_rotate_b(stacks->b, costs.cost_b);
+	ft_rotate_a(stacks->a, costs.cost_a);
+	ft_rotate_b(stacks->b, costs.cost_b);
 	pa(stacks, 1);
 }
 
