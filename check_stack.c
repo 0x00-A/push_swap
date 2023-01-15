@@ -6,7 +6,7 @@
 /*   By: aigounad <aigounad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:46:02 by aigounad          #+#    #+#             */
-/*   Updated: 2023/01/13 11:50:26 by aigounad         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:22:39 by aigounad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,9 @@ int	ft_create_stack(t_stacks *stacks, int ac, char **av)
 {
 	char	**p;
 	int		count;
+	int		tmp;
 
+	tmp = ac;
 	while (--ac > 0)
 	{
 		p = ft_split(av[ac], ' ');
@@ -115,7 +117,7 @@ int	ft_create_stack(t_stacks *stacks, int ac, char **av)
 		if (!count)
 		{
 			free(p);
-			return (0);
+			return (ft_error());
 		}
 		if (!ft_create_stack_helper(stacks, p, count))
 			return (0);

@@ -6,7 +6,7 @@
 #    By: aigounad <aigounad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/01 00:09:57 by aigounad          #+#    #+#              #
-#    Updated: 2023/01/10 16:21:40 by aigounad         ###   ########.fr        #
+#    Updated: 2023/01/13 16:25:40 by aigounad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,3 +58,5 @@ fclean : clean
 	make fclean -C $(LIB_DIR)
 
 re : fclean all
+
+ps : all bonus clean
